@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Repertório Groove Roots</title>
+<style>
+    body { font-family: Arial, sans-serif; background:#111; color:#fff; padding:20px; }
+    h1 { text-align:center; }
+    label, select, input { width:100%; margin-top:10px; }
+    button { margin-top:20px; padding:12px; width:100%; font-size:16px; cursor:pointer; border:none; border-radius:6px; }
+    .btn { background:#25D366; color:#000; font-weight:bold; }
+</style>
+</head>
+<body>
+<h1>Repertório Groove Roots</h1>
+<p>Escolha sua música abaixo e envie direto para o WhatsApp!</p>
+
+<label for="nome">Seu nome (opcional):</label>
+<input type="text" id="nome" placeholder="Digite seu nome" />
+
+<label for="musica">Escolha a música:</label>
+<select id="musica">
+<option value="">Selecione...</option>
+<option>Wish You Were Here - Pink Floyd</option>
+<option>Another Brick In The Wall - Pink Floyd</option>
+<option>Ela Partiu/Voce/Gostava Tanto de Você - Tim Maia</option>
+<option>Ideologia - Cazuza</option>
+<option>Ana Júlia - Los Hermanos</option>
+<option>Geração Coca-Cola - Legião Urbana</option>
+<option>Ciúme - Ultraje A Rigor</option>
+<option>Aluga-se - Raul Seixas</option>
+<option>Mulher de Fases - Raimundos</option>
+<option>Vou Deixar - Skank</option>
+<option>Ana Lua - Armandinho</option>
+<option>Zóio de Lula - Charlie Brown Jr</option>
+<option>Anjos - O Rappa</option>
+<option>Tempo Perdido - Legião Urbana</option>
+<option>Proibida Pra Mim - Charlie Brown Jr</option>
+<option>Pescador - Armandinho</option>
+<option>Meu Erro - Paralamas Do Sucesso</option>
+<option>Quinta-feira - Charlie Brown Jr</option>
+<option>Epitáfio - Titãs</option>
+<option>Bete-Balanço - Barão Vermelho</option>
+<option>Assim Caminha a Humanidade - Lulu Santos</option>
+<option>Astronauta de Mármore - Nenhum de Nós</option>
+<option>Primeiros Erros - Capital Inicial</option>
+<option>Era Um Garoto - Engenheiros Do Hawaii</option>
+<option>Pra Dizer Adeus - Titãs</option>
+<option>Sutilmente - Skank</option>
+<option>Pais e Filhos - Legião Urbana</option>
+<option>Cowboy Fora da Lei - Raul Seixas</option>
+<option>Asas - Maskavo</option>
+<option>Eu Sei - Papas na Língua</option>
+<option>Like a Stone - Audioslave</option>
+<option>Casinha - Armandinho</option>
+<option>Californication - Red Hot Chili Peppers</option>
+<option>Snow (Hey Oh) - Red Hot Chili Peppers</option>
+<option>Under The Bridge - Red Hot Chili Peppers</option>
+<option>Otherside - Red Hot Chili Peppers</option>
+<option>Amor Pra Recomeçar - Frejat</option>
+<option>Ainda É Cedo - Legião Urbana</option>
+<option>Céu Azul - Charlie Brown Jr</option>
+<option>Tempos Modernos - Lulu Santos</option>
+<option>Bichos Escrotos - Titãs</option>
+<option>Riders On The Storm - The Doors</option>
+<option>Segredos - Frejat</option>
+<option>Acima do Sol - Skank</option>
+<option>Pescador de Ilusões - O Rappa</option>
+<option>Do Seu Lado - Jota Quest</option>
+<option>Have You Ever Seen The Rain? - Creedence</option>
+<option>Every Breath You Take - The Police</option>
+<option>I Wanna Be Sedated - Ramones</option>
+<option>Hey Jude - The Beatles</option>
+<option>À Sua Maneira - Capital Inicial</option>
+<option>Eu Sou Egoísta - Raul Seixas</option>
+<option>Inabalavelmente - Charlie Brown Jr</option>
+<option>Simple Man - Lynyrd Skynyrd</option>
+<option>Psycho Killer - Talking Heads</option>
+<option>Me Lambe - Raimundos</option>
+<option>Gravity - John Mayer</option>
+<option>Soldier of Love - Pearl Jam</option>
+<option>Gita - Raul Seixas</option>
+<option>Pontes Indestrutíveis - Charlie Brown Jr</option>
+<option>Além do Horizonte - Jota Quest</option>
+<option>Every Little Thing - Bob Marley</option>
+<option>Ela Disse Adeus - Paralamas do Sucesso</option>
+<option>Tudo Vai Dar Certo - Natiruts</option>
+<option>True To Myself - Ziggy Marley</option>
+<option>Até Quando Esperar - Plebe Rude</option>
+<option>Cantar - Raul Seixas</option>
+<option>Disco Voador - Raul Seixas</option>
+</select>
+
+<label for="outra">Outra música (se não estiver na lista):</label>
+<input type="text" id="outra" placeholder="Digite o nome da música" />
+
+<button class="btn" onclick="enviar()">Enviar pelo WhatsApp</button>
+
+<script>
+function enviar() {
+    let nome = document.getElementById('nome').value;
+    let musica = document.getElementById('musica').value;
+    let outra = document.getElementById('outra').value;
+
+    let escolhida = musica !== "" ? musica : outra;
+    if (!escolhida) {
+        alert("Escolha ou digite uma música!");
+        return;
+    }
+
+    let msg = `Olá! Gostaria de pedir a música: ${escolhida}`;
+    if (nome.trim() !== "") msg += `\nMeu nome: ${nome}`;
+
+    let url = `https://wa.me/5541996338156?text=${encodeURIComponent(msg)}`;
+    window.location.href = url;
+}
+</script>
+
+</body>
+</html>
