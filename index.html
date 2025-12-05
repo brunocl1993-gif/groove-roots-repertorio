@@ -1,121 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Repertório Groove Roots</title>
+<meta charset="UTF-8">
+<title>Peça sua música</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    body { font-family: Arial, sans-serif; background:#111; color:#fff; padding:20px; }
-    h1 { text-align:center; }
-    label, select, input { width:100%; margin-top:10px; }
-    button { margin-top:20px; padding:12px; width:100%; font-size:16px; cursor:pointer; border:none; border-radius:6px; }
-    .btn { background:#25D366; color:#000; font-weight:bold; }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        background: #ffffff;
+        padding: 30px;
+        max-width: 420px;
+        width: 90%;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+        margin-top: 15px;
+        display: block;
+    }
+    select, input, textarea, button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+    }
+    button {
+        background: #111;
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.2s;
+    }
+    button:hover {
+        opacity: 0.85;
+    }
 </style>
 </head>
 <body>
-<h1>Repertório Groove Roots</h1>
-<p>Escolha sua música abaixo e envie direto para o WhatsApp!</p>
 
-<label for="nome">Seu nome (opcional):</label>
-<input type="text" id="nome" placeholder="Digite seu nome" />
+<div class="container">
+    <h2>Peça sua Música 🎵</h2>
 
-<label for="musica">Escolha a música:</label>
-<select id="musica">
-<option value="">Selecione...</option>
-<option>Wish You Were Here - Pink Floyd</option>
-<option>Another Brick In The Wall - Pink Floyd</option>
-<option>Ela Partiu/Voce/Gostava Tanto de Você - Tim Maia</option>
-<option>Ideologia - Cazuza</option>
-<option>Ana Júlia - Los Hermanos</option>
-<option>Geração Coca-Cola - Legião Urbana</option>
-<option>Ciúme - Ultraje A Rigor</option>
-<option>Aluga-se - Raul Seixas</option>
-<option>Mulher de Fases - Raimundos</option>
-<option>Vou Deixar - Skank</option>
-<option>Ana Lua - Armandinho</option>
-<option>Zóio de Lula - Charlie Brown Jr</option>
-<option>Anjos - O Rappa</option>
-<option>Tempo Perdido - Legião Urbana</option>
-<option>Proibida Pra Mim - Charlie Brown Jr</option>
-<option>Pescador - Armandinho</option>
-<option>Meu Erro - Paralamas Do Sucesso</option>
-<option>Quinta-feira - Charlie Brown Jr</option>
-<option>Epitáfio - Titãs</option>
-<option>Bete-Balanço - Barão Vermelho</option>
-<option>Assim Caminha a Humanidade - Lulu Santos</option>
-<option>Astronauta de Mármore - Nenhum de Nós</option>
-<option>Primeiros Erros - Capital Inicial</option>
-<option>Era Um Garoto - Engenheiros Do Hawaii</option>
-<option>Pra Dizer Adeus - Titãs</option>
-<option>Sutilmente - Skank</option>
-<option>Pais e Filhos - Legião Urbana</option>
-<option>Cowboy Fora da Lei - Raul Seixas</option>
-<option>Asas - Maskavo</option>
-<option>Eu Sei - Papas na Língua</option>
-<option>Like a Stone - Audioslave</option>
-<option>Casinha - Armandinho</option>
-<option>Californication - Red Hot Chili Peppers</option>
-<option>Snow (Hey Oh) - Red Hot Chili Peppers</option>
-<option>Under The Bridge - Red Hot Chili Peppers</option>
-<option>Otherside - Red Hot Chili Peppers</option>
-<option>Amor Pra Recomeçar - Frejat</option>
-<option>Ainda É Cedo - Legião Urbana</option>
-<option>Céu Azul - Charlie Brown Jr</option>
-<option>Tempos Modernos - Lulu Santos</option>
-<option>Bichos Escrotos - Titãs</option>
-<option>Riders On The Storm - The Doors</option>
-<option>Segredos - Frejat</option>
-<option>Acima do Sol - Skank</option>
-<option>Pescador de Ilusões - O Rappa</option>
-<option>Do Seu Lado - Jota Quest</option>
-<option>Have You Ever Seen The Rain? - Creedence</option>
-<option>Every Breath You Take - The Police</option>
-<option>I Wanna Be Sedated - Ramones</option>
-<option>Hey Jude - The Beatles</option>
-<option>À Sua Maneira - Capital Inicial</option>
-<option>Eu Sou Egoísta - Raul Seixas</option>
-<option>Inabalavelmente - Charlie Brown Jr</option>
-<option>Simple Man - Lynyrd Skynyrd</option>
-<option>Psycho Killer - Talking Heads</option>
-<option>Me Lambe - Raimundos</option>
-<option>Gravity - John Mayer</option>
-<option>Soldier of Love - Pearl Jam</option>
-<option>Gita - Raul Seixas</option>
-<option>Pontes Indestrutíveis - Charlie Brown Jr</option>
-<option>Além do Horizonte - Jota Quest</option>
-<option>Every Little Thing - Bob Marley</option>
-<option>Ela Disse Adeus - Paralamas do Sucesso</option>
-<option>Tudo Vai Dar Certo - Natiruts</option>
-<option>True To Myself - Ziggy Marley</option>
-<option>Até Quando Esperar - Plebe Rude</option>
-<option>Cantar - Raul Seixas</option>
-<option>Disco Voador - Raul Seixas</option>
-</select>
+    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
 
-<label for="outra">Outra música (se não estiver na lista):</label>
-<input type="text" id="outra" placeholder="Digite o nome da música" />
+        <label>Seu nome (opcional):</label>
+        <input type="text" name="Nome">
 
-<button class="btn" onclick="enviar()">Enviar pelo WhatsApp</button>
+        <label>Música desejada:</label>
+        <select name="Música" required>
+            <option value="">Selecione uma música...</option>
 
-<script>
-function enviar() {
-    let nome = document.getElementById('nome').value;
-    let musica = document.getElementById('musica').value;
-    let outra = document.getElementById('outra').value;
+            <!-- 🎸 ACERVO COMPLETO — Cabelo de Corda + Groove Roots Updates -->
 
-    let escolhida = musica !== "" ? musica : outra;
-    if (!escolhida) {
-        alert("Escolha ou digite uma música!");
-        return;
-    }
+            <optgroup label="Rock / Pop / Internacional">
+                <option>Wish You Were Here – Pink Floyd</option>
+                <option>Another Brick In The Wall – Pink Floyd</option>
+                <option>Knockin' On Heaven's Door – Guns N' Roses</option>
+                <option>Californication – Red Hot Chili Peppers</option>
+                <option>Otherside – Red Hot Chili Peppers</option>
+                <option>Dani California – Red Hot Chili Peppers</option>
+                <option>Scar Tissue – Red Hot Chili Peppers</option>
+                <option>Have You Ever Seen The Rain – Creedence</option>
+                <option>Bad Moon Rising – Creedence</option>
+                <option>Stand By Me – Ben E. King</option>
+                <option>Zombie – The Cranberries</option>
+                <option>Yellow – Coldplay</option>
+                <option>Fix You – Coldplay</option>
+                <option>The Scientist – Coldplay</option>
+                <option>Let It Be – Beatles</option>
+                <option>Come Together – Beatles</option>
+                <option>Hey Jude – Beatles</option>
+                <option>Time – Pink Floyd</option>
+                <option>High Hopes – Pink Floyd</option>
+            </optgroup>
 
-    let msg = `Olá! Gostaria de pedir a música: ${escolhida}`;
-    if (nome.trim() !== "") msg += `\nMeu nome: ${nome}`;
+            <optgroup label="Rock Nacional / MPB / Pop Brasil">
+                <option>Ela Partiu – Tim Maia</option>
+                <option>Gostava Tanto de Você – Tim Maia</option>
+                <option>Ideologia – Cazuza</option>
+                <option>Ana Júlia – Los Hermanos</option>
+                <option>Geração Coca-Cola – Legião Urbana</option>
+                <option>Tempo Perdido – Legião Urbana</option>
+                <option>Eduardo e Mônica – Legião Urbana</option>
+                <option>Aluga-se – Raul Seixas</option>
+                <option>Maluco Beleza – Raul Seixas</option>
+                <option>Medo Bobo – Maiara & Maraisa</option>
+                <option>Oceano – Djavan</option>
+                <option>Eu Sei Que Vou Te Amar – Tom Jobim</option>
+                <option>Primeiros Erros – Kiko Zambianchi</option>
+                <option>Do Seu Lado – Jota Quest</option>
+                <option>Sutilmente – Skank</option>
+                <option>Vou Deixar – Skank</option>
+                <option>Garotos II – Leoni</option>
+                <option>Segredos – Frejat</option>
+                <option>Lanterna dos Afogados – Paralamas</option>
+            </optgroup>
 
-    let url = `https://wa.me/5541996338156?text=${encodeURIComponent(msg)}`;
-    window.location.href = url;
-}
-</script>
+            <optgroup label="Reggae / Good Vibes">
+                <option>Bob Marley – Is This Love</option>
+                <option>Bob Marley – No Woman No Cry</option>
+                <option>Bob Marley – Three Little Birds</option>
+                <option>Armandinho – Ursinho de Dormir</option>
+                <option>Armandinho – Desenho de Deus</option>
+                <option>Armandinho – Outra Vida</option>
+                <option>Natiruts – Sorri Sou Rei</option>
+                <option>Natiruts – Quero Ser Feliz Também</option>
+                <option>Maneva – O Destino Não Quis</option>
+                <option>Maneva – Sem Jeito</option>
+            </optgroup>
+
+            <optgroup label="Extras / Clássicos / Indie">
+                <option>Creep – Radiohead</option>
+                <option>Riptide – Vance Joy</option>
+                <option>Take On Me – A-ha</option>
+                <option>Mr. Brightside – The Killers</option>
+                <option>Use Somebody – Kings of Leon</option>
+                <option>Sex On Fire – Kings of Leon</option>
+                <option>Chasing Cars – Snow Patrol</option>
+            </optgroup>
+
+        </select>
+
+        <label>Mensagem (opcional):</label>
+        <textarea name="Mensagem" rows="3"></textarea>
+
+        <button type="submit">Enviar Pedido 🎤</button>
+    </form>
+</div>
 
 </body>
 </html>
