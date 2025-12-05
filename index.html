@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<title>Peça sua música — Duo Acústico</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<title>Acoustic Vibz — Pedido de Música</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <style>
-  body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f7;margin:0;padding:20px;display:flex;justify-content:center}
-  .card{background:#fff;padding:22px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);max-width:520px;width:100%}
-  h1{margin:0 0 6px;font-size:20px}
-  p{margin:0 0 16px;color:#555}
-  label{display:block;font-weight:600;margin:10px 0 6px}
-  select,input,textarea,button{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:15px;box-sizing:border-box}
-  textarea{resize:vertical}
-  button{background:#111;color:#fff;border:0;padding:12px;margin-top:14px;cursor:pointer;border-radius:8px}
-  small{display:block;margin-top:10px;color:#888}
+  :root{--bg:#f6f9ff;--card:#fff;--accent:#2b6cb0}
+  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#e6f0ff,#fff0f7);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+  .card{background:var(--card);width:100%;max-width:560px;border-radius:14px;padding:22px;box-shadow:0 10px 30px rgba(20,20,40,0.08)}
+  h1{margin:0 0 8px;font-size:20px;color:#111}
+  p{margin:0 0 16px;color:#444}
+  label{display:block;margin-top:12px;font-weight:600;color:#222}
+  input,select,textarea,button{width:100%;box-sizing:border-box;border-radius:10px;border:1px solid #e0e6f0;padding:12px;font-size:15px;margin-top:6px}
+  textarea{min-height:84px;resize:vertical}
+  button{background:var(--accent);color:#fff;border:0;cursor:pointer;font-weight:700;margin-top:14px;padding:12px;border-radius:10px}
+  button:active{transform:translateY(1px)}
+  small{display:block;margin-top:10px;color:#666}
+  .footer{margin-top:12px;text-align:center;color:#666;font-size:13px}
 </style>
 </head>
 <body>
   <div class="card">
-    <h1>Peça sua música 🎶</h1>
-    <p>Escolha uma música do repertório do <strong>Duo Acústico</strong> e envie seu pedido — nós vamos dar uma olhada durante o show!</p>
+    <h1>ACOUSTIC VIBZ — Pedido de Música</h1>
+    <p>Escolha uma música do repertório e envie o pedido direto no nosso WhatsApp.</p>
 
-    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" autocomplete="off">
-      <input type="hidden" name="_captcha" value="false">
-
+    <form id="pedidoForm" onsubmit="return sendToWhatsApp(event)">
       <label for="nome">Seu nome (opcional)</label>
       <input id="nome" name="nome" type="text" placeholder="Como quer que a gente te chame?">
 
@@ -31,6 +32,7 @@
       <select id="musica" name="musica" required>
         <option value="">-- selecione uma música --</option>
 
+        <!--  ACERVO EXACTO ACOUSTIC Vibz (EXATAMENTE como enviado) -->
         <option>Wish You Were Here - Pink Floyd</option>
         <option>Another Brick In The Wall - Pink Floyd</option>
         <option>Ela Partiu/Voce/Gostava Tanto de Você  - Tim Maia</option>
@@ -100,7 +102,6 @@
         <option>Raul Seixas - Cantar</option>
         <option>Raul Seixas - Disco Voador</option>
         <option>Mutantes - Ando meio desligado</option>
-
         <option>Amy Winehouse - Valerie</option>
         <option>Amy Winehouse - Back to Black</option>
         <option>Bonnie Tyler - It's a heartache</option>
@@ -113,13 +114,58 @@
         <option>Elis Regina - Como nossos pais</option>
       </select>
 
-      <label for="msg">Mensagem (opcional)</label>
-      <textarea id="msg" name="mensagem" rows="3" placeholder="Quer mandar um recado junto com o pedido?"></textarea>
+      <label for="mensagem">Mensagem (opcional)</label>
+      <textarea id="mensagem" name="mensagem" placeholder="Quer mandar um recado junto com o pedido?"></textarea>
 
-      <button type="submit">Enviar pedido</button>
+      <button type="submit">Enviar pedido pro WhatsApp</button>
 
-      <small>Substitua <code>SEU_EMAIL_AQUI</code> no atributo action pelo e-mail que você usar no FormSubmit.co</small>
+      <small>Ao enviar, o WhatsApp será aberto com a mensagem pronta — você só confirma o envio.</small>
     </form>
+
+    <div class="footer">Acoustic Vibz • Live at Pico de Matinhos – PR</div>
   </div>
+
+<script>
+/*
+  Envia pedido para WhatsApp.
+  Número usado: 5541996338156 (formato internacional).
+  Se quiser trocar, altere a variável `whatsappNumber`.
+*/
+const whatsappNumber = "5541996338156";
+
+function sendToWhatsApp(e) {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  const musica = document.getElementById('musica').value;
+  const mensagem = document.getElementById('mensagem').value.trim();
+
+  if (!musica) {
+    alert('Escolha uma música antes de enviar.');
+    return false;
+  }
+
+  // Monta a mensagem que vai pro WhatsApp
+  let text = `Pedido de música - Acoustic Vibz%0A`;
+  text += `Música: ${encodeURIComponent(musica)}%0A`;
+  if (nome) text += `Nome: ${encodeURIComponent(nome)}%0A`;
+  if (mensagem) text += `Recado: ${encodeURIComponent(mensagem)}%0A`;
+  text += `%0AEnviado via Acoustic Vibz (GitHub Pages).`;
+
+  // Observação: encodeURIComponent já usado nas partes, mas vamos montar o query safe:
+  // Usamos encodeURIComponent na linha do valor do texto para garantir espaços e acentos.
+  const fullText = `Pedido de música - Acoustic Vibz\nMúsica: ${musica}\n` +
+                   (nome ? `Nome: ${nome}\n` : '') +
+                   (mensagem ? `Recado: ${mensagem}\n` : '') +
+                   `\nEnviado via Acoustic Vibz (GitHub Pages).`;
+
+  // Monta URL wa.me com texto codificado
+  const waUrl = `https://wa.me/${whatsappNumber}?text=` + encodeURIComponent(fullText);
+
+  // Abre em nova aba / aplica
+  window.open(waUrl, '_blank');
+  return false;
+}
+</script>
+
 </body>
 </html>
