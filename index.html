@@ -1,25 +1,124 @@
-<select id="musica" name="musica" required>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Acoustic Vibz — Pedido de Música</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, #e6f0ff, #fff0f7);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      max-width: 560px;
+      width: 100%;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: #444;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      font-size: 15px;
+      border-radius: 10px;
+      border: 1px solid #e0e6f0;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      margin-top: 16px;
+      background: #2b6cb0;
+      color: #fff;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    small {
+      display: block;
+      margin-top: 10px;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Peça sua música 🎶</h1>
+    <p>Escolha uma música do repertório do <strong>Acoustic Vibz</strong> e envie direto pro nosso WhatsApp.</p>
+
+    <form onsubmit="return sendToWhatsApp()">
+      <label for="nome">Seu nome (opcional)</label>
+      <input id="nome" type="text" placeholder="Como quer que a gente te chame?">
+
+      <label for="musica">Música desejada</label>
+<select id="musica" required>
   <option value="">-- selecione uma música --</option>
 
-  <optgroup label="🎤 PINK FLOYD">
+  <optgroup label="Pink Floyd">
     <option>Wish You Were Here</option>
-    <option>Another Brick In The Wall</option>
+    <option>Another Brick in the Wall</option>
   </optgroup>
 
-  <optgroup label="🎤 TIM MAIA">
-    <option>Ela Partiu / Você / Gostava Tanto de Você</option>
+  <optgroup label="Tim Maia">
+    <option>Ela Partiu</option>
+    <option>Gostava Tanto de Você</option>
   </optgroup>
 
-  <optgroup label="🎤 CAZUZA">
+  <optgroup label="Cazuza">
     <option>Ideologia</option>
     <option>Blues da Piedade</option>
   </optgroup>
 
-  <optgroup label="🎤 LOS HERMANOS">
+  <optgroup label="Los Hermanos">
     <option>Ana Júlia</option>
   </optgroup>
 
-  <optgroup label="🎤 LEGIÃO URBANA">
+  <optgroup label="Legião Urbana">
     <option>Geração Coca-Cola</option>
     <option>Tempo Perdido</option>
     <option>Pais e Filhos</option>
@@ -27,102 +126,184 @@
     <option>Índios</option>
   </optgroup>
 
-  <optgroup label="🎤 RAUL SEIXAS">
+  <optgroup label="Ultraje a Rigor">
+    <option>Ciúme</option>
+  </optgroup>
+
+  <optgroup label="Raul Seixas">
     <option>Aluga-se</option>
     <option>Cowboy Fora da Lei</option>
-    <option>Eu Sou Egoísta</option>
     <option>Gita</option>
+    <option>Cantar</option>
+    <option>Disco Voador</option>
     <option>Maluco Beleza</option>
     <option>Metamorfose Ambulante</option>
     <option>Tente Outra Vez</option>
     <option>Ouro de Tolo</option>
-    <option>Disco Voador</option>
-    <option>Cantar</option>
+    <option>Medo da Chuva</option>
+    <option>S.O.S</option>
+    <option>Meu Amigo Pedro</option>
+    <option>Eu Sou Egoísta</option>
+    <option>Eu Também Vou Reclamar</option>
+    <option>Sapato 36</option>
   </optgroup>
 
-  <optgroup label="🎤 RAIMUNDOS">
+  <optgroup label="Raimundos">
     <option>Mulher de Fases</option>
     <option>Me Lambe</option>
-    <option>A Mais Pedida</option>
     <option>Bonita</option>
+    <option>A Mais Pedida</option>
     <option>Aquela</option>
-    <option>Reggae do Maneiro</option>
   </optgroup>
 
-  <optgroup label="🎤 SKANK">
+  <optgroup label="Skank">
     <option>Vou Deixar</option>
     <option>Sutilmente</option>
     <option>Acima do Sol</option>
     <option>Resposta</option>
     <option>Vamos Fugir</option>
-    <option>Ela Me Deixou</option>
     <option>Ainda Gosto Dela</option>
   </optgroup>
 
-  <optgroup label="🎤 ARMANDINHO">
+  <optgroup label="Armandinho">
     <option>Ana Lua</option>
     <option>Pescador</option>
     <option>Casinha</option>
     <option>Outra Vida</option>
     <option>Lua Cheia</option>
-    <option>Ainda Gosto de Você</option>
   </optgroup>
 
-  <optgroup label="🎤 CHARLIE BROWN JR">
+  <optgroup label="Charlie Brown Jr.">
     <option>Zóio de Lula</option>
     <option>Proibida Pra Mim</option>
     <option>Quinta-feira</option>
     <option>Céu Azul</option>
-    <option>Inabalavelmente</option>
     <option>Pontes Indestrutíveis</option>
+    <option>Inabalavelmente</option>
   </optgroup>
 
-  <optgroup label="🎤 O RAPPA">
+  <optgroup label="O Rappa">
     <option>Anjos</option>
     <option>Pescador de Ilusões</option>
     <option>Vapor Barato</option>
   </optgroup>
 
-  <optgroup label="🎤 RED HOT CHILI PEPPERS">
-    <option>Californication</option>
-    <option>Snow (Hey Oh)</option>
-    <option>Under The Bridge</option>
-    <option>Otherside</option>
+  <optgroup label="Titãs">
+    <option>Epitáfio</option>
+    <option>Pra Dizer Adeus</option>
+    <option>Bichos Escrotos</option>
+    <option>Flores</option>
   </optgroup>
 
-  <optgroup label="🎤 PEARL JAM">
-    <option>Soldier of Love</option>
-    <option>Last Kiss</option>
+  <optgroup label="Barão Vermelho">
+    <option>Bete Balanço</option>
   </optgroup>
 
-  <optgroup label="🎤 AMY WINEHOUSE">
+  <optgroup label="Lulu Santos">
+    <option>Assim Caminha a Humanidade</option>
+    <option>Tempos Modernos</option>
+  </optgroup>
+
+  <optgroup label="Capital Inicial">
+    <option>Primeiros Erros</option>
+    <option>À Sua Maneira</option>
+  </optgroup>
+
+  <optgroup label="Engenheiros do Hawaii">
+    <option>Era Um Garoto</option>
+  </optgroup>
+
+  <optgroup label="Pitty">
+    <option>Na Sua Estante</option>
+    <option>Máscara</option>
+    <option>Equalize</option>
+    <option>Déjà Vu</option>
+  </optgroup>
+
+  <optgroup label="Elis Regina">
+    <option>Como Nossos Pais</option>
+    <option>Velha Roupa Colorida</option>
+  </optgroup>
+
+  <optgroup label="Amy Winehouse">
     <option>Valerie</option>
     <option>Back to Black</option>
     <option>You Know I'm No Good</option>
     <option>Wake Up Alone</option>
   </optgroup>
 
-  <optgroup label="🎤 PITTY">
-    <option>Na Sua Estante</option>
-    <option>Máscara</option>
-    <option>Equalize</option>
-    <option>Déjà Vu</option>
-    <option>Dê Um Rolê</option>
+  <optgroup label="Red Hot Chili Peppers">
+    <option>Californication</option>
+    <option>Snow (Hey Oh)</option>
+    <option>Under the Bridge</option>
+    <option>Otherside</option>
   </optgroup>
 
-  <optgroup label="🎤 RITA LEE">
-    <option>Ovelha Negra</option>
-    <option>Agora Só Falta Você</option>
+  <optgroup label="Pearl Jam">
+    <option>Soldier of Love</option>
+    <option>Last Kiss</option>
   </optgroup>
 
-  <optgroup label="🎤 OUTROS">
-    <option>Hey Jude! - The Beatles</option>
-    <option>Simple Man - Lynyrd Skynyrd</option>
-    <option>Gravity - John Mayer</option>
-    <option>Every Little Thing - Bob Marley</option>
+  <optgroup label="Bob Marley / Ziggy Marley">
+    <option>Every Little Thing</option>
+    <option>True to Myself</option>
+  </optgroup>
+
+  <optgroup label="Internacionais">
+    <option>Like a Stone - Audioslave</option>
+    <option>Riders on the Storm - The Doors</option>
+    <option>Have You Ever Seen the Rain - Creedence</option>
     <option>Proud Mary - Creedence</option>
-    <option>Have You Ever Seen The Rain? - Creedence</option>
-    <option>Lake of Fire - Nirvana</option>
-    <option>Malibu - Hole</option>
+    <option>Every Breath You Take - The Police</option>
+    <option>I Wanna Be Sedated - Ramones</option>
+    <option>Hey Jude - The Beatles</option>
+    <option>Simple Man - Lynyrd Skynyrd</option>
+    <option>Psycho Killer - Talking Heads</option>
+    <option>Gravity - John Mayer</option>
   </optgroup>
+
 </select>
+
+      <label for="mensagem">Mensagem (opcional)</label>
+      <textarea id="mensagem" placeholder="Quer mandar um recado junto?"></textarea>
+
+      <button type="submit">Enviar pedido pro WhatsApp</button>
+
+      <small>O WhatsApp abrirá com a mensagem pronta. É só confirmar o envio.</small>
+    </form>
+
+    <div class="footer">
+      Acoustic Vibz • Live
+    </div>
+  </div>
+
+  <script>
+    const whatsappNumber = "5541996338156";
+
+    function sendToWhatsApp() {
+      const nome = document.getElementById("nome").value.trim();
+      const musica = document.getElementById("musica").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
+
+      if (!musica) {
+        alert("Escolha uma música antes de enviar.");
+        return false;
+      }
+
+      let texto =
+        `🎶 Pedido de Música — Acoustic Vibz\n` +
+        `Música: ${musica}\n`;
+
+      if (nome) texto += `Nome: ${nome}\n`;
+      if (mensagem) texto += `Recado: ${mensagem}\n`;
+
+      texto += `\nEnviado pelo site (GitHub Pages).`;
+
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(texto)}`;
+      window.open(url, "_blank");
+
+      return false;
+    }
+  </script>
+</body>
+</html>
