@@ -5,165 +5,171 @@
 <title>Acoustic Vibz — Pedido de Música</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <style>
-  :root{--bg:#f6f9ff;--card:#fff;--accent:#2b6cb0}
-  body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#e6f0ff,#fff0f7);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
-  .card{background:var(--card);width:100%;max-width:560px;border-radius:14px;padding:22px;box-shadow:0 10px 30px rgba(20,20,40,0.08)}
-  h1{margin:0 0 8px;font-size:20px;color:#111}
+  :root{--card:#fff;--accent:#2b6cb0}
+  body{
+    margin:0;
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:linear-gradient(180deg,#e6f0ff,#fff0f7);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:20px
+  }
+  .card{
+    background:var(--card);
+    width:100%;
+    max-width:560px;
+    border-radius:14px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(20,20,40,0.08)
+  }
+  h1{margin:0 0 8px;font-size:20px}
   p{margin:0 0 16px;color:#444}
-  label{display:block;margin-top:12px;font-weight:600;color:#222}
-  input,select,textarea,button{width:100%;box-sizing:border-box;border-radius:10px;border:1px solid #e0e6f0;padding:12px;font-size:15px;margin-top:6px}
-  textarea{min-height:84px;resize:vertical}
-  button{background:var(--accent);color:#fff;border:0;cursor:pointer;font-weight:700;margin-top:14px;padding:12px;border-radius:10px}
-  button:active{transform:translateY(1px)}
-  small{display:block;margin-top:10px;color:#666}
-  .footer{margin-top:12px;text-align:center;color:#666;font-size:13px}
+  label{display:block;margin-top:12px;font-weight:600}
+  input,select,textarea,button{
+    width:100%;
+    border-radius:10px;
+    border:1px solid #e0e6f0;
+    padding:12px;
+    font-size:15px;
+    margin-top:6px
+  }
+  button{
+    background:var(--accent);
+    color:#fff;
+    border:0;
+    font-weight:700;
+    margin-top:14px;
+    cursor:pointer
+  }
+  .footer{margin-top:12px;text-align:center;font-size:13px;color:#666}
 </style>
 </head>
 <body>
-  <div class="card">
-    <h1>ACOUSTIC VIBZ — Pedido de Música</h1>
-    <p>Escolha uma música do repertório e envie o pedido direto no nosso WhatsApp.</p>
 
-    <form id="pedidoForm" onsubmit="return sendToWhatsApp(event)">
-      <label for="nome">Seu nome (opcional)</label>
-      <input id="nome" name="nome" type="text" placeholder="Como quer que a gente te chame?">
+<div class="card">
+<h1>ACOUSTIC VIBZ — Pedido de Música</h1>
+<p>Escolha a música e envie direto no WhatsApp.</p>
 
-      <label for="musica">Música desejada</label>
-      <select id="musica" name="musica" required>
-        <option value="">-- selecione uma música --</option>
+<form onsubmit="return sendToWhatsApp(event)">
+<label>Seu nome (opcional)</label>
+<input id="nome" type="text">
 
-        <!--  ACERVO EXACTO ACOUSTIC Vibz (EXATAMENTE como enviado) -->
-        <option>Wish You Were Here - Pink Floyd</option>
-        <option>Another Brick In The Wall - Pink Floyd</option>
-        <option>Ela Partiu/Voce/Gostava Tanto de Você  - Tim Maia</option>
-        <option>Ideologia - Cazuza</option>
-        <option>Ana Júlia - Los Hermanos</option>
-        <option>Geração Coca-Cola - Legiao Urbana</option>
-        <option>Ciúme - Ultraje A Rigor</option>
-        <option>Aluga-se - Raul Seixas</option>
-        <option>Mulher de Fases - Raimundos</option>
-        <option>Vou Deixar - Skank</option>
-        <option>Ana Lua - Armandinho</option>
-        <option>Zóio de Lula - Charlie Brown Jr</option>
-        <option>Anjos - O Rappa</option>
-        <option>Tempo Perdido - Legião Urbana</option>
-        <option>Proibida Pra Mim - Charlie Brown Jr</option>
-        <option>Pescador - Armandinho</option>
-        <option>Meu Erro - Paralamas Do Sucesso</option>
-        <option>Quinta-feira - Charlie Brown Jr</option>
-        <option>Epitáfio - Titãs</option>
-        <option>Bete-Balanço - Barão Vermelho</option>
-        <option>Assim Caminha a Humanidade - Lulu Santos</option>
-        <option>Astronauta de Mármore - Nenhum de Nós</option>
-        <option>Primeiros Erros - Capital Inicial</option>
-        <option>Era Um Garoto - Engenheiros Do Hawai</option>
-        <option>Pra Dizer Adeus - Titãs</option>
-        <option>Sutilmente - Skank</option>
-        <option>Pais e Filhos - Legião Urbana</option>
-        <option>Cowboy Fora da Lei - Raul Seixas</option>
-        <option>Asas - Maskavo</option>
-        <option>Eu sei - Papas na Língua</option>
-        <option>Like a Stone - Audioslave</option>
-        <option>Casinha - Armandinho</option>
-        <option>Red Hot Chilli Peppers - Californication</option>
-        <option>Red Hot Chilli Peppers - Snow (Hey oh!)</option>
-        <option>Red Hot Chilli Peppers - Under The Bridge</option>
-        <option>Red Hot Chilli Peppers - Otherside</option>
-        <option>Frejat - Amor Pra Recomeçar</option>
-        <option>Legião Urbana - Ainda É Cedo</option>
-        <option>Charlie Brown Jr - Céu Azul</option>
-        <option>Lulu Santos - Tempos Modernos</option>
-        <option>Titãs - Bichos Escrotos</option>
-        <option>The Doors - Riders On The Storm</option>
-        <option>Frejat - Segredos</option>
-        <option>Skank - Acima Do Sol</option>
-        <option>O Rappa - Pescador De Ilusões</option>
-        <option>Jota Quest - Do Seu Lado</option>
-        <option>Creedence - Have You Ever Seen The Rain?</option>
-        <option>The Police - Every Breath You Take</option>
-        <option>Ramones - I Wanna Be Sedated</option>
-        <option>The Beatles - Hey Jude!</option>
-        <option>Capital Inicial - À Sua Maneira</option>
-        <option>Raul Seixas - Eu Sou Egoista</option>
-        <option>Charlie Brown Jr - Inabalavelmente</option>
-        <option>Lynyrd Skynyrd - Simple Man</option>
-        <option>Talking Heads - Psycho Killer</option>
-        <option>Raimundos - Me Lambe</option>
-        <option>John Mayer - Gravity</option>
-        <option>Pearl Jam - Soldier Of Love</option>
-        <option>Raul Seixas - Gita</option>
-        <option>CBJR - Pontes Indestrutíveis</option>
-        <option>Joga Quest - Além do Horizonte</option>
-        <option>Bob Marley - Every Little Thing</option>
-        <option>Paralamas Do Sucesso - Ela Disse Adeus</option>
-        <option>Natiruts - Tudo Vai Dar Certo</option>
-        <option>Zyggy Marley - True To Myself</option>
-        <option>Plebe Rude - Até Quando Esperar</option>
-        <option>Raul Seixas - Cantar</option>
-        <option>Raul Seixas - Disco Voador</option>
-        <option>Mutantes - Ando meio desligado</option>
-        <option>Amy Winehouse - Valerie</option>
-        <option>Amy Winehouse - Back to Black</option>
-        <option>Bonnie Tyler - It's a heartache</option>
-        <option>Rita Lee - Ovelha Negra</option>
-        <option>Rita Lee - Agora só falta você</option>
-        <option>Pitty - Na sua estante</option>
-        <option>Pitty - Eu quero sempre mais</option>
-        <option>Vanessa Rangel - Palpite</option>
-        <option>Pitty - Máscara</option>
-        <option>Elis Regina - Como nossos pais</option>
-      </select>
+<label>Música desejada</label>
+<select id="musica" required>
+<option value="">-- selecione uma música --</option>
 
-      <label for="mensagem">Mensagem (opcional)</label>
-      <textarea id="mensagem" name="mensagem" placeholder="Quer mandar um recado junto com o pedido?"></textarea>
+<optgroup label="🎤 Pink Floyd">
+<option>Wish You Were Here - Pink Floyd</option>
+<option>Another Brick In The Wall - Pink Floyd</option>
+</optgroup>
 
-      <button type="submit">Enviar pedido pro WhatsApp</button>
+<optgroup label="🎤 Tim Maia">
+<option>Ela Partiu / Você / Gostava Tanto de Você - Tim Maia</option>
+</optgroup>
 
-      <small>Ao enviar, o WhatsApp será aberto com a mensagem pronta — você só confirma o envio.</small>
-    </form>
+<optgroup label="🎤 Cazuza">
+<option>Ideologia - Cazuza</option>
+<option>Blues Da Piedade - Cazuza</option>
+</optgroup>
 
-    <div class="footer">Acoustic Vibz • Live at Pico de Matinhos – PR</div>
-  </div>
+<optgroup label="🎤 Pitty">
+<option>Na Sua Estante - Pitty</option>
+<option>Máscara - Pitty</option>
+<option>Equalize - Pitty</option>
+<option>Déjà Vu - Pitty</option>
+<option>Dê Um Rolê - Pitty</option>
+<option>Eu Quero Sempre Mais - Pitty & Ira!</option>
+</optgroup>
+
+<optgroup label="🎤 Legião Urbana">
+<option>Tempo Perdido - Legião Urbana</option>
+<option>Pais e Filhos - Legião Urbana</option>
+<option>Ainda É Cedo - Legião Urbana</option>
+<option>Índios - Legião Urbana</option>
+<option>Geração Coca-Cola - Legião Urbana</option>
+</optgroup>
+
+<optgroup label="🎤 Raul Seixas">
+<option>Aluga-se - Raul Seixas</option>
+<option>Cowboy Fora da Lei - Raul Seixas</option>
+<option>Gita - Raul Seixas</option>
+<option>Maluco Beleza - Raul Seixas</option>
+<option>Metamorfose Ambulante - Raul Seixas</option>
+<option>Tente Outra Vez - Raul Seixas</option>
+<option>Ouro De Tolo - Raul Seixas</option>
+<option>Disco Voador - Raul Seixas</option>
+<option>Cantar - Raul Seixas</option>
+<option>Eu Sou Egoísta - Raul Seixas</option>
+</optgroup>
+
+<optgroup label="🎤 Raimundos">
+<option>Mulher de Fases - Raimundos</option>
+<option>Me Lambe - Raimundos</option>
+<option>Bonita - Raimundos</option>
+<option>A Mais Pedida - Raimundos</option>
+</optgroup>
+
+<optgroup label="🎤 Amy Winehouse">
+<option>Valerie - Amy Winehouse</option>
+<option>Back To Black - Amy Winehouse</option>
+<option>You Know I'm No Good - Amy Winehouse</option>
+<option>Wake Up Alone - Amy Winehouse</option>
+</optgroup>
+
+<optgroup label="🎤 Skank">
+<option>Sutilmente - Skank</option>
+<option>Acima Do Sol - Skank</option>
+<option>Vou Deixar - Skank</option>
+<option>Vamos Fugir - Skank</option>
+</optgroup>
+
+<optgroup label="🎤 Armandinho">
+<option>Ana Lua - Armandinho</option>
+<option>Casinha - Armandinho</option>
+<option>Outra Vida - Armandinho</option>
+<option>Lua Cheia - Armandinho</option>
+</optgroup>
+
+<optgroup label="🎤 O Rappa">
+<option>Anjos - O Rappa</option>
+<option>Pescador de Ilusões - O Rappa</option>
+<option>Vapor Barato - O Rappa</option>
+</optgroup>
+
+</select>
+
+<label>Mensagem (opcional)</label>
+<textarea id="mensagem"></textarea>
+
+<button type="submit">Enviar pedido pro WhatsApp</button>
+</form>
+
+<div class="footer">Acoustic Vibz • Live at Pico de Matinhos – PR</div>
+</div>
 
 <script>
-/*
-  Envia pedido para WhatsApp.
-  Número usado: 5541996338156 (formato internacional).
-  Se quiser trocar, altere a variável `whatsappNumber`.
-*/
 const whatsappNumber = "5541996338156";
 
-function sendToWhatsApp(e) {
+function sendToWhatsApp(e){
   e.preventDefault();
-  const nome = document.getElementById('nome').value.trim();
-  const musica = document.getElementById('musica').value;
-  const mensagem = document.getElementById('mensagem').value.trim();
+  const nome = document.getElementById("nome").value;
+  const musica = document.getElementById("musica").value;
+  const msg = document.getElementById("mensagem").value;
 
-  if (!musica) {
-    alert('Escolha uma música antes de enviar.');
-    return false;
-  }
+  if(!musica){ alert("Escolha uma música"); return; }
 
-  // Monta a mensagem que vai pro WhatsApp
-  let text = `Pedido de música - Acoustic Vibz%0A`;
-  text += `Música: ${encodeURIComponent(musica)}%0A`;
-  if (nome) text += `Nome: ${encodeURIComponent(nome)}%0A`;
-  if (mensagem) text += `Recado: ${encodeURIComponent(mensagem)}%0A`;
-  text += `%0AEnviado via Acoustic Vibz (GitHub Pages).`;
+  const texto =
+`Pedido de música - Acoustic Vibz
+Música: ${musica}
+${nome ? "Nome: "+nome : ""}
+${msg ? "Recado: "+msg : ""}`;
 
-  // Observação: encodeURIComponent já usado nas partes, mas vamos montar o query safe:
-  // Usamos encodeURIComponent na linha do valor do texto para garantir espaços e acentos.
-  const fullText = `Pedido de música - Acoustic Vibz\nMúsica: ${musica}\n` +
-                   (nome ? `Nome: ${nome}\n` : '') +
-                   (mensagem ? `Recado: ${mensagem}\n` : '') +
-                   `\nEnviado via Acoustic Vibz (GitHub Pages).`;
-
-  // Monta URL wa.me com texto codificado
-  const waUrl = `https://wa.me/${whatsappNumber}?text=` + encodeURIComponent(fullText);
-
-  // Abre em nova aba / aplica
-  window.open(waUrl, '_blank');
-  return false;
+  window.open(
+    "https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(texto),
+    "_blank"
+  );
 }
 </script>
 
