@@ -1,235 +1,128 @@
-<script>
-const whatsappNumber = "5541996338156";
+<select id="musica" name="musica" required>
+  <option value="">-- selecione uma música --</option>
 
-function sendToWhatsApp(e) {
-  e.preventDefault();
+  <optgroup label="🎤 PINK FLOYD">
+    <option>Wish You Were Here</option>
+    <option>Another Brick In The Wall</option>
+  </optgroup>
 
-  const nome = document.getElementById("nome").value.trim();
-  const musica = document.getElementById("musica").value;
-  const mensagem = document.getElementById("mensagem").value.trim();
+  <optgroup label="🎤 TIM MAIA">
+    <option>Ela Partiu / Você / Gostava Tanto de Você</option>
+  </optgroup>
 
-  if (!musica) {
-    alert("Escolha uma música antes de enviar.");
-    return false;
-  }
+  <optgroup label="🎤 CAZUZA">
+    <option>Ideologia</option>
+    <option>Blues da Piedade</option>
+  </optgroup>
 
-  let texto = "🎶 *Pedido de Música - Acoustic Vibz* 🎶\n\n";
-  texto += "🎵 Música: " + musica + "\n";
+  <optgroup label="🎤 LOS HERMANOS">
+    <option>Ana Júlia</option>
+  </optgroup>
 
-  if (nome) {
-    texto += "🙋 Nome: " + nome + "\n";
-  }
+  <optgroup label="🎤 LEGIÃO URBANA">
+    <option>Geração Coca-Cola</option>
+    <option>Tempo Perdido</option>
+    <option>Pais e Filhos</option>
+    <option>Ainda É Cedo</option>
+    <option>Índios</option>
+  </optgroup>
 
-  if (mensagem) {
-    texto += "💬 Recado: " + mensagem + "\n";
-  }
+  <optgroup label="🎤 RAUL SEIXAS">
+    <option>Aluga-se</option>
+    <option>Cowboy Fora da Lei</option>
+    <option>Eu Sou Egoísta</option>
+    <option>Gita</option>
+    <option>Maluco Beleza</option>
+    <option>Metamorfose Ambulante</option>
+    <option>Tente Outra Vez</option>
+    <option>Ouro de Tolo</option>
+    <option>Disco Voador</option>
+    <option>Cantar</option>
+  </optgroup>
 
-  texto += "\nEnviado pelo site (GitHub Pages).";
+  <optgroup label="🎤 RAIMUNDOS">
+    <option>Mulher de Fases</option>
+    <option>Me Lambe</option>
+    <option>A Mais Pedida</option>
+    <option>Bonita</option>
+    <option>Aquela</option>
+    <option>Reggae do Maneiro</option>
+  </optgroup>
 
-  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(texto);
-  window.open(url, "_blank");
+  <optgroup label="🎤 SKANK">
+    <option>Vou Deixar</option>
+    <option>Sutilmente</option>
+    <option>Acima do Sol</option>
+    <option>Resposta</option>
+    <option>Vamos Fugir</option>
+    <option>Ela Me Deixou</option>
+    <option>Ainda Gosto Dela</option>
+  </optgroup>
 
-  return false;
-}
-</script>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Repertório Musical</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background:#111;
-  color:#eee;
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
-h1 {
-  text-align:center;
-}
-h2 {
-  margin-top:40px;
-  color:#f5c542;
-  border-bottom:1px solid #333;
-}
-ul {
-  list-style:none;
-  padding:0;
-}
-li {
-  padding:6px 0;
-  border-bottom:1px dashed #222;
-}
-</style>
-</head>
-<body>
+  <optgroup label="🎤 ARMANDINHO">
+    <option>Ana Lua</option>
+    <option>Pescador</option>
+    <option>Casinha</option>
+    <option>Outra Vida</option>
+    <option>Lua Cheia</option>
+    <option>Ainda Gosto de Você</option>
+  </optgroup>
 
-<h1>🎶 Repertório Completo</h1>
+  <optgroup label="🎤 CHARLIE BROWN JR">
+    <option>Zóio de Lula</option>
+    <option>Proibida Pra Mim</option>
+    <option>Quinta-feira</option>
+    <option>Céu Azul</option>
+    <option>Inabalavelmente</option>
+    <option>Pontes Indestrutíveis</option>
+  </optgroup>
 
-<h2>🎤 Pink Floyd</h2>
-<ul>
-<li>Wish You Were Here</li>
-<li>Another Brick in the Wall</li>
-</ul>
+  <optgroup label="🎤 O RAPPA">
+    <option>Anjos</option>
+    <option>Pescador de Ilusões</option>
+    <option>Vapor Barato</option>
+  </optgroup>
 
-<h2>🎤 Tim Maia</h2>
-<ul>
-<li>Ela Partiu / Você / Gostava Tanto de Você</li>
-</ul>
+  <optgroup label="🎤 RED HOT CHILI PEPPERS">
+    <option>Californication</option>
+    <option>Snow (Hey Oh)</option>
+    <option>Under The Bridge</option>
+    <option>Otherside</option>
+  </optgroup>
 
-<h2>🎤 Cazuza</h2>
-<ul>
-<li>Ideologia</li>
-<li>Blues da Piedade</li>
-</ul>
+  <optgroup label="🎤 PEARL JAM">
+    <option>Soldier of Love</option>
+    <option>Last Kiss</option>
+  </optgroup>
 
-<h2>🎤 Los Hermanos</h2>
-<ul>
-<li>Ana Júlia</li>
-</ul>
+  <optgroup label="🎤 AMY WINEHOUSE">
+    <option>Valerie</option>
+    <option>Back to Black</option>
+    <option>You Know I'm No Good</option>
+    <option>Wake Up Alone</option>
+  </optgroup>
 
-<h2>🎤 Legião Urbana</h2>
-<ul>
-<li>Geração Coca-Cola</li>
-<li>Tempo Perdido</li>
-<li>Pais e Filhos</li>
-<li>Ainda É Cedo</li>
-<li>Índios</li>
-</ul>
+  <optgroup label="🎤 PITTY">
+    <option>Na Sua Estante</option>
+    <option>Máscara</option>
+    <option>Equalize</option>
+    <option>Déjà Vu</option>
+    <option>Dê Um Rolê</option>
+  </optgroup>
 
-<h2>🎤 Ultraje a Rigor</h2>
-<ul>
-<li>Ciúme</li>
-</ul>
+  <optgroup label="🎤 RITA LEE">
+    <option>Ovelha Negra</option>
+    <option>Agora Só Falta Você</option>
+  </optgroup>
 
-<h2>🎤 Raul Seixas</h2>
-<ul>
-<li>Aluga-se</li>
-<li>Cowboy Fora da Lei</li>
-<li>Eu Sou Egoísta</li>
-<li>Gita</li>
-<li>Maluco Beleza</li>
-<li>Metamorfose Ambulante</li>
-<li>Super-Heróis</li>
-<li>Por Quem Os Sinos Dobram</li>
-<li>A Ilha da Fantasia</li>
-<li>As Minas do Rei Salomão</li>
-<li>Medo da Chuva</li>
-<li>Coisas do Coração</li>
-<li>Abra-te Sésamo</li>
-<li>A Geração da Luz</li>
-<li>Quando Acabar o Maluco Sou Eu</li>
-<li>Fazendo o Que o Diabo Gosta</li>
-<li>Meu Amigo Pedro</li>
-<li>Tu És o MDC da Minha Vida</li>
-<li>Capim Guiné</li>
-<li>Tente Outra Vez</li>
-<li>S.O.S</li>
-<li>Ouro de Tolo</li>
-<li>Eu Também Vou Reclamar</li>
-<li>Al Capone</li>
-<li>Sapato 36</li>
-<li>Rockixe</li>
-<li>Movido a Álcool</li>
-<li>Cantar</li>
-<li>Disco Voador</li>
-</ul>
-
-<h2>🎤 Raimundos</h2>
-<ul>
-<li>Mulher de Fases</li>
-<li>Me Lambe</li>
-<li>A Mais Pedida</li>
-<li>Bonita</li>
-<li>Aquela</li>
-<li>Reggae do Maneiro</li>
-</ul>
-
-<h2>🎤 Skank</h2>
-<ul>
-<li>Vou Deixar</li>
-<li>Sutilmente</li>
-<li>Acima do Sol</li>
-<li>Resposta</li>
-<li>Vamos Fugir</li>
-<li>Ela Me Deixou</li>
-<li>Ainda Gosto Dela</li>
-</ul>
-
-<h2>🎤 Armandinho</h2>
-<ul>
-<li>Ana Lua</li>
-<li>Pescador</li>
-<li>Casinha</li>
-<li>Outra Vida</li>
-<li>Outra Noite Que Se Vai</li>
-<li>Ainda Gosto de Você</li>
-<li>Lua Cheia</li>
-</ul>
-
-<h2>🎤 Charlie Brown Jr</h2>
-<ul>
-<li>Zóio de Lula</li>
-<li>Proibida Pra Mim</li>
-<li>Quinta-feira</li>
-<li>Céu Azul</li>
-<li>Pontes Indestrutíveis</li>
-<li>Inabalavelmente</li>
-</ul>
-
-<h2>🎤 Red Hot Chili Peppers</h2>
-<ul>
-<li>Californication</li>
-<li>Snow (Hey Oh)</li>
-<li>Under the Bridge</li>
-<li>Otherside</li>
-</ul>
-
-<h2>🎤 Pearl Jam</h2>
-<ul>
-<li>Soldier of Love</li>
-<li>Last Kiss</li>
-</ul>
-
-<h2>🎤 O Rappa</h2>
-<ul>
-<li>Anjos</li>
-<li>Pescador de Ilusões</li>
-<li>Vapor Barato</li>
-</ul>
-
-<h2>🎤 Paralamas do Sucesso</h2>
-<ul>
-<li>Meu Erro</li>
-<li>Ela Disse Adeus</li>
-</ul>
-
-<h2>🎤 Titãs</h2>
-<ul>
-<li>Epitáfio</li>
-<li>Pra Dizer Adeus</li>
-<li>Bichos Escrotos</li>
-<li>Flores (com Marisa Monte)</li>
-</ul>
-
-<h2>🎤 Outros</h2>
-<ul>
-<li>Wish You Were Here – Pink Floyd</li>
-<li>Hey Jude – The Beatles</li>
-<li>Every Breath You Take – The Police</li>
-<li>I Wanna Be Sedated – Ramones</li>
-<li>Simple Man – Lynyrd Skynyrd</li>
-<li>Psycho Killer – Talking Heads</li>
-<li>Gravity – John Mayer</li>
-<li>Every Little Thing – Bob Marley</li>
-<li>True to Myself – Ziggy Marley</li>
-<li>Até Quando Esperar – Plebe Rude</li>
-<li>Like a Stone – Audioslave</li>
-<li>Riders on the Storm – The Doors</li>
-</ul>
-
-</body>
-</html>
+  <optgroup label="🎤 OUTROS">
+    <option>Hey Jude! - The Beatles</option>
+    <option>Simple Man - Lynyrd Skynyrd</option>
+    <option>Gravity - John Mayer</option>
+    <option>Every Little Thing - Bob Marley</option>
+    <option>Proud Mary - Creedence</option>
+    <option>Have You Ever Seen The Rain? - Creedence</option>
+    <option>Lake of Fire - Nirvana</option>
+    <option>Malibu - Hole</option>
+  </optgroup>
+</select>
