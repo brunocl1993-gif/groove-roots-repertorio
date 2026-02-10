@@ -1,3 +1,37 @@
+<script>
+const whatsappNumber = "5541996338156";
+
+function sendToWhatsApp(e) {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const musica = document.getElementById("musica").value;
+  const mensagem = document.getElementById("mensagem").value.trim();
+
+  if (!musica) {
+    alert("Escolha uma música antes de enviar.");
+    return false;
+  }
+
+  let texto = "🎶 *Pedido de Música - Acoustic Vibz* 🎶\n\n";
+  texto += "🎵 Música: " + musica + "\n";
+
+  if (nome) {
+    texto += "🙋 Nome: " + nome + "\n";
+  }
+
+  if (mensagem) {
+    texto += "💬 Recado: " + mensagem + "\n";
+  }
+
+  texto += "\nEnviado pelo site (GitHub Pages).";
+
+  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(texto);
+  window.open(url, "_blank");
+
+  return false;
+}
+</script>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
