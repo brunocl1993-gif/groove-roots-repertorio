@@ -1,495 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Rock & Vibz — Pedido de Música</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-font-family: Inter, Arial, sans-serif;
-background: linear-gradient(180deg, #e6f0ff, #fff0f7);
-min-height: 100vh;
-margin: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 20px;
-}
-.card {
-background: #fff;
-max-width: 560px;
-width: 100%;
-padding: 22px;
-border-radius: 14px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-h1 {
-margin: 0 0 8px;
-font-size: 20px;
-}
-p {
-margin: 0 0 16px;
-color: #444;
-}
-label {
-display: block;
-margin-top: 12px;
-font-weight: 600;
-}
-input, select, textarea, button {
-width: 100%;
-padding: 12px;
-margin-top: 6px;
-font-size: 15px;
-border-radius: 10px;
-border: 1px solid #e0e6f0;
-box-sizing: border-box;
-}
-textarea {
-resize: vertical;
-min-height: 80px;
-}
-button {
-margin-top: 16px;
-background: #2b6cb0;
-color: #fff;
-border: none;
-font-weight: 700;
-cursor: pointer;
-}
-button:active {
-transform: translateY(1px);
-}
-small {
-display: block;
-margin-top: 10px;
-color: #666;
-font-size: 13px;
-}
-.footer {
-text-align: center;
-margin-top: 14px;
-font-size: 13px;
-color: #666;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Acoustic Vibz — Pedido de Música</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, #e6f0ff, #fff0f7);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      max-width: 560px;
+      width: 100%;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    h1 { margin: 0 0 8px; font-size: 20px; }
+    p { margin: 0 0 16px; color: #444; }
+    label { display: block; margin-top: 12px; font-weight: 600; }
+    input, select, textarea, button {
+      width: 100%; padding: 12px; margin-top: 6px;
+      font-size: 15px; border-radius: 10px;
+      border: 1px solid #e0e6f0; box-sizing: border-box;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    button {
+      margin-top: 16px; background: #2b6cb0; color: #fff;
+      border: none; font-weight: 700; cursor: pointer;
+    }
+    button:active { transform: translateY(1px); }
+    small { display: block; margin-top: 10px; color: #666; font-size: 13px; }
+    .footer { text-align: center; margin-top: 14px; font-size: 13px; color: #666; }
+  </style>
 </head>
+
 <body>
-<div class="card">
-<h1>Peça sua música 🎶</h1>
-<p>Escolha uma música do repertório do <strong>Rock & Vibzz</strong> e envie direto pro nosso WhatsApp.</p>
-<form onsubmit="return sendToWhatsApp()">
-<label for="nome">Seu nome (opcional)</label>
-<input id="nome" type="text" placeholder="Como quer que a gente te chame?">
-<label for="musica">Música desejada</label>
-<select id="musica" required>
-<option value="">-- selecione uma música --</option>
-<optgroup label="Adriana Calcanhotto">
-<option>Devolva-me</option>
-</optgroup>
-<optgroup label="Amy Winehouse">
-<option>Valerie</option>
-<option>Back to Black</option>
-<option>You Know I'm No Good</option>
-<option>Wake Up Alone</option>
-</optgroup>
-<optgroup label="Armandinho">
-<option>Outra Noite Que Se Vai</option>
-<option>Pescador</option>
-<option>Analua</option>
-<option>Casinha</option>
-<option>Lua cheia</option>
-<option>Folha de bananeira</option>
-<option>Outra vida</option>
-<option>A ilha</option>
-<option>Sol loiro</option>
-<option>Ursinho de dormir</option>
-<option>Semente</option>
-</optgroup>
-<optgroup label="Audioslave">
-<option>Like a Stone</option>
-<option>Be Yourself</option>
-<option>Show Me How to Live</option>
-</optgroup>
-<optgroup label="Barão Vermelho">
-<option>Bete-Balanço</option>
-</optgroup>
-<optgroup label="Belchior">
-<option>Sujeito de Sorte</option>
-</optgroup>
-<optgroup label="Billy Idol">
-<option>Eyes Without a Face</option>
-</optgroup>
-<optgroup label="Blindagem">
-<option>Dias Incertos</option>
-<option>Bicho do Paraná</option>
-<option>Loba da Estepe</option>
-</optgroup>
-<optgroup label="Blur">
-<option>Song 2</option>
-</optgroup>
-<optgroup label="Bob Marley">
-<option>Is This Love</option>
-<option>Three Little Birds</option>
-</optgroup>
-<optgroup label="Bonnie Tyler">
-<option>It's a Heartache</option>
-</optgroup>
-<optgroup label="Cachorro Grande">
-<option>Sinceramente</option>
-</optgroup>
-<optgroup label="Capital Inicial">
-<option>Primeiros Erros</option>
-<option>À Sua Maneira</option>
-</optgroup>
-<optgroup label="Cássia Eller">
-<option>Segundo Sol</option>
-<option>Malandragem</option>
-<option>Por Enquanto</option>
-<option>Palavras ao Vento</option>
-</optgroup>
-<optgroup label="Cazuza">
-<option>Blues da Piedade</option>
-<option>Ideologia</option>
-<option>Exagerado</option>
-<option>O Tempo Não Para</option>
-</optgroup>
-<optgroup label="Charlie Brown Jr.">
-<option>Zóio de Lula</option>
-<option>Proibida Pra Mim</option>
-<option>Quinta-Feira</option>
-<option>Céu Azul</option>
-<option>Inabalavelmente</option>
-<option>Pontes Indestrutíveis</option>
-<option>Só por uma Noite</option>
-<option>Só os Loucos Sabem</option>
-<option>Lugar ao Sol</option>
-<option>Tudo Que Ela Gosta de Escutar</option>
-<option>Lutar pelo Que é Meu</option>
-<option>Vicios e virtudes</option>
-<option>Ela vai voltar</option>
-</optgroup>
-<optgroup label="Coldplay">
-<option>Yellow</option>
-</optgroup>
-<optgroup label="Cranberries">
-<option>Zombie</option>
-<option>Linger</option>
-</optgroup>
-<optgroup label="Creedence Clearwater Revival">
-<option>I Put a Spell on You</option>
-<option>Suzie Q</option>
-<option>Bad Moon Rising</option>
-<option>Have You Ever Seen the Rain?</option>
-<option>Proud Mary</option>
-</optgroup>
-<optgroup label="Detonautas">
-<option>Você me faz tão bem</option>
-<option>O dia que não terminou</option>
-<option>Olhos Certos</option>
-<option>Quando o sol se for</option>
-<option>Outro lugar</option>
-</optgroup>
-<optgroup label="Elis Regina">
-<option>Como Nossos Pais</option>
-<option>Velha Roupa Colorida</option>
-</optgroup>
-<optgroup label="Erasmo Carlos">
-<option>Ilegal, Imoral ou Engorda</option>
-</optgroup>
-<optgroup label="Frejat">
-<option>Amor Pra Recomeçar</option>
-<option>Segredos</option>
-<option>Por Você</option>
-</optgroup>
-<optgroup label="Green Day">
-<option>Holiday</option>
-<option>Boulevard of Broken Dreams</option>
-<option>Basket Case</option>
-<option>Time of Your Life</option>
-<option>Wake Me Up When September Ends</option>
-</optgroup>
-<optgroup label="Janis Joplin">
-<option>Me and Bobby McGee</option>
-</optgroup>
-<optgroup label="John Denver">
-<option>Take Me Home</option>
-</optgroup>
-<optgroup label="John Mayer">
-<option>Gravity</option>
-</optgroup>
-<optgroup label="Jota Quest">
-<option>Do Seu Lado</option>
-<option>Além do Horizonte</option>
-</optgroup>
-<optgroup label="Kid Abelha">
-<option>Como Eu Quero</option>
-</optgroup>
-<optgroup label="Legião Urbana">
-<option>Pais e Filhos</option>
-<option>Será</option>
-<option>Geração Coca-Cola</option>
-<option>Ainda É Cedo</option>
-<option>Tempo Perdido</option>
-<option>Indios</option>
-<option>Mais uma vez</option>
-</optgroup>
-<optgroup label="Los Hermanos">
-<option>Ana Júlia</option>
-</optgroup>
-<optgroup label="Lulu Santos">
-<option>Assim Caminha a Humanidade</option>
-<option>Tempos Modernos</option>
-<option>Apenas Mais Uma de Amor</option>
-</optgroup>
-<optgroup label="Lynyrd Skynyrd">
-<option>Simple Man</option>
-</optgroup>
-<optgroup label="Mamonas Assassinas">
-<option>Vira vira</option>
-<option>Pelados em santos</option>
-<option>Mundo animal</option>
-<option>Shopis centis</option>
-<option>Sábado de sol</option>
-<option>Não peide aqui baby</option>
-<option>O mamute</option>
-</optgroup>
-<optgroup label="Marilyn Manson">
-<option>Coma White</option>
-<option>Sweet Dreams</option>
-</optgroup>
-<optgroup label="Maskavo">
-<option>Asas</option>
-<option>Anjo</option>
-</optgroup>
-<optgroup label="Matanza">
-<option>Bom é quando faz mal</option>
-</optgroup>
-<optgroup label="Nando Reis">
-<option>Pra Você Guardei o Amor</option>
-<option>De Janeiro a Janeiro</option>
-<option>Marvin</option>
-<option>Por Onde Andei</option>
-<option>Cegos do Castelo</option>
-</optgroup>
-<optgroup label="Natiruts">
-<option>Liberdade Pra Dentro da Cabeça</option>
-<option>Tudo Vai Dar Certo</option>
-<option>Quero Ser Feliz Também</option>
-<option>Andei Só</option>
-</optgroup>
-<optgroup label="Nenhum de Nós">
-<option>Astronauta de Mármore (Starman)</option>
-</optgroup>
-<optgroup label="Nirvana">
-<option>Heart-Shaped Box</option>
-<option>Lake of Fire</option>
-<option>About a Girl</option>
-<option>Polly</option>
-</optgroup>
-<optgroup label="O Rappa">
-<option>Anjos</option>
-<option>Pescador de Ilusões</option>
-</optgroup>
-<optgroup label="Oasis">
-<option>Wonderwall</option>
-</optgroup>
-<optgroup label="Papas da Língua">
-<option>Eu Sei</option>
-</optgroup>
-<optgroup label="Paralamas do Sucesso">
-<option>Meu Erro</option>
-<option>Ela Disse Adeus</option>
-<option>Aonde Quer Que Eu Vá</option>
-</optgroup>
-<optgroup label="Pearl Jam">
-<option>Soldier of Love</option>
-<option>Last Kiss</option>
-<option>Sirens</option>
-</optgroup>
-<optgroup label="Pink Floyd">
-<option>Wish You Were Here</option>
-<option>Another Brick in the Wall</option>
-</optgroup>
-<optgroup label="Pitty">
-<option>Equalize</option>
-<option>Máscara</option>
-<option>Déjà Vu</option>
-<option>Memórias</option>
-<option>Me Adora</option>
-<option>Na sua estante</option>
-</optgroup>
-<optgroup label="Plebe Rude">
-<option>Até Quando Esperar</option>
-</optgroup>
-<optgroup label="R.E.M.">
-<option>Losing My Religion</option>
-</optgroup>
-<optgroup label="Raimundos">
-<option>A Mais Pedida</option>
-<option>Mulher de Fases</option>
-<option>I Saw You Saying</option>
-<option>Aquela</option>
-<option>Me Lambe</option>
-</optgroup>
-<optgroup label="Ramones">
-<option>I Wanna Be Sedated</option>
-<option>Pet Sematary</option>
-<option>Poison Heart</option>
-<option>Blitzkrieg Bop</option>
-</optgroup>
-<optgroup label="Raul Seixas">
-<option>Meu Amigo Pedro</option>
-<option>Cantar</option>
-<option>Disco Voador</option>
-<option>Cowboy Fora da Lei</option>
-<option>Metamorfose Ambulante</option>
-<option>Aluga-se</option>
-<option>Tu És o MDC da Minha Vida</option>
-<option>Tente Outra Vez</option>
-<option>Eu Sou Egoísta</option>
-<option>Gita</option>
-<option>Coisas do coração</option>
-<option>As minas do rei salomao</option>
-<option>Anos 80</option>
-<option>Quando acabar o maluco sou eu</option>
-<option>Fazendo o que o diabo gosta</option>
-<option>Rock das aranhas</option>
-<option>Rockxice</option>
-<option>Medo da chuva</option>
-<option>Al capone</option>
-<option>Sos</option>
-<option>Eu nasci há 10 anos atrás</option>
-<option>Capim Guiné</option>
-<option>Por quem os sinos dobram</option>
-<option>Carpinteiro do universo</option>
-<option>Pastor joao e a igreja invisível</option>
-<option>Nao quero mais andar na contramao</option>
-<option>Geração da luz</option>
-</optgroup>
-<optgroup label="Red Hot Chili Peppers">
-<option>Californication</option>
-<option>Snow (Hey Oh!)</option>
-<option>Under the Bridge</option>
-<option>Otherside</option>
-</optgroup>
-<optgroup label="Rita Lee">
-<option>Tudo Vira Bosta</option>
-<option>Esse Tal de Roque Enrow</option>
-<option>Jardins da Babilônia</option>
-<option>Ovelha Negra</option>
-<option>Agora Só Falta Você</option>
-</optgroup>
-<optgroup label="Skank">
-<option>Vou Deixar</option>
-<option>Sutilmente</option>
-<option>Acima do Sol</option>
-<option>Dois Rios</option>
-<option>Resposta</option>
-<option>Vamos fugir</option>
-<option>Ainda gosto dela</option>
-<option>Saidera</option>
-<option>Te ver</option>
-<option>É uma partida de futebol</option>
-</optgroup>
-<optgroup label="System of a Down">
-<option>Aerials</option>
-<option>Lost in Hollywood</option>
-<option>Roulette</option>
-<option>Lonely Day</option>
-</optgroup>
-<optgroup label="Talking Heads">
-<option>Psycho Killer</option>
-</optgroup>
-<optgroup label="The Beatles">
-<option>Hey Jude</option>
-<option>A Hard Day's Night</option>
-<option>Twist and Shout</option>
-</optgroup>
-<optgroup label="The Doors">
-<option>Riders on the Storm</option>
-<option>Love Me Two Times</option>
-</optgroup>
-<optgroup label="The Police">
-<option>Every Breath You Take</option>
-</optgroup>
-<optgroup label="The Smashing Pumpkins">
-<option>Disarm</option>
-</optgroup>
-<optgroup label="Tim Maia">
-<option>Ela Partiu</option>
-<option>Você</option>
-<option>Gostava Tanto de Você</option>
-<option>Azul da Cor do Mar</option>
-<option>Acenda o Farol</option>
-</optgroup>
-<optgroup label="Titãs">
-<option>Epitáfio</option>
-<option>Pra Dizer Adeus</option>
-<option>Bichos Escrotos</option>
-<option>Flores</option>
-<option>Isso</option>
-<option>Por que eu sei que é amor</option>
-<option>Sonífera ilha</option>
-<option>Polícia</option>
-<option>É preciso saber viver</option>
-</optgroup>
-<optgroup label="Tribalistas">
-<option>Velha Infância</option>
-</optgroup>
-<optgroup label="Ultraje a Rigor">
-<option>Ciúme</option>
-<option>Nada a declarar</option>
-</optgroup>
-<optgroup label="Vanessa Rangel">
-<option>Palpite</option>
-</optgroup>
-<optgroup label="Velhas Virgens">
-<option>Uns drinks</option>
-</optgroup>
-<optgroup label="Ventania">
-<option>O diabo é careta (viajando)</option>
-<option>Maconha</option>
-<option>Só para loucos</option>
-<option>Cogumelos azuis</option>
-</optgroup>
-<optgroup label="Weezer">
-<option>Island in the sun</option>
-</optgroup>
-<optgroup label="Ziggy Marley">
-<option>True to Myself</option>
-</optgroup>
-</select>
-<label for="mensagem">Mensagem (opcional)</label>
-<textarea id="mensagem" placeholder="Quer mandar um recado junto?"></textarea>
-<button type="submit">Enviar pedido pro WhatsApp</button>
-<small>O WhatsApp abrirá com a mensagem pronta. É só confirmar o envio.</small>
-</form>
-<div class="footer">
-Rock Vibzz Live
-</div>
-</div>
-<script>
-// Você pode manter este número ou alterar para o de quem recebe os pedidos nos shows
-const whatsappNumber = "5541996338156";
-function sendToWhatsApp() {
-const nome = document.getElementById("nome").value.trim();
-const musica = document.getElementById("musica").value;
-const mensagem = document.getElementById("mensagem").value.trim();
-if (!musica) {
-alert("Escolha uma música antes de enviar.");
-return false;
-}
-let texto =
-⁠🎶 Pedido de Música — Acoustic Vibz\n⁠ +
-⁠Música: ${musica}\n⁠;
-if (nome) texto += ⁠Nome: ${nome}\n⁠;
-if (mensagem) texto += ⁠Recado: ${mensagem}\n⁠;
-texto += ⁠\nEnviado pelo site do repertório.⁠;
-const url = ⁠https://wa.me/${whatsappNumber}?text=${encodeURIComponent(texto)}⁠;
-window.open(url, "_blank");
-return false;
-}
-</script>
+  <div class="card">
+    <h1>Peça sua música 🎶</h1>
+    <p>Escolha uma música do repertório do <strong>Rock Vibzz</strong> e envie direto pro nosso WhatsApp.</p>
+
+    <form onsubmit="return sendToWhatsApp()">
+      <label for="nome">Seu nome (opcional)</label>
+      <input id="nome" type="text" placeholder="Como quer que a gente te chame?">
+
+      <label for="musica">Música desejada</label>
+      <select id="musica" required>
+        <option value="">-- selecione uma música --</option>
+
+        <optgroup label="Adriana Calcanhotto"><option>Devolva-me</option></optgroup>
+        <optgroup label="Amy Winehouse"><option>Valerie</option><option>Back to Black</option><option>You Know I'm No Good</option><option>Wake Up Alone</option></optgroup>
+        <optgroup label="Armandinho"><option>Outra Noite Que Se Vai</option><option>Pescador</option><option>Analua</option><option>Casinha</option><option>Lua cheia</option><option>Folha de bananeira</option><option>Outra vida</option><option>A ilha</option><option>Sol loiro</option><option>Ursinho de dormir</option><option>Semente</option></optgroup>
+        <optgroup label="Audioslave"><option>Like a Stone</option><option>Be Yourself</option><option>Show Me How to Live</option></optgroup>
+        <optgroup label="Barão Vermelho"><option>Bete-Balanço</option></optgroup>
+        <optgroup label="Belchior"><option>Sujeito de Sorte</option></optgroup>
+        <optgroup label="Billy Idol"><option>Eyes Without a Face</option></optgroup>
+        <optgroup label="Blindagem"><option>Dias Incertos</option><option>Bicho do Paraná</option><option>Loba da Estepe</option></optgroup>
+        <optgroup label="Blur"><option>Song 2</option></optgroup>
+        <optgroup label="Bob Marley"><option>Is This Love</option><option>Three Little Birds</option></optgroup>
+        <optgroup label="Bonnie Tyler"><option>It's a Heartache</option></optgroup>
+        <optgroup label="Cachorro Grande"><option>Sinceramente</option></optgroup>
+        <optgroup label="Capital Inicial"><option>Primeiros Erros</option><option>À Sua Maneira</option></optgroup>
+        <optgroup label="Cássia Eller"><option>Segundo Sol</option><option>Malandragem</option><option>Por Enquanto</option><option>Palavras ao Vento</option></optgroup>
+        <optgroup label="Cazuza"><option>Blues da Piedade</option><option>Ideologia</option><option>Exagerado</option><option>O Tempo Não Para</option></optgroup>
+        <optgroup label="Charlie Brown Jr."><option>Zóio de Lula</option><option>Proibida Pra Mim</option><option>Quinta-Feira</option><option>Céu Azul</option><option>Inabalavelmente</option><option>Pontes Indestrutíveis</option><option>Só por uma Noite</option><option>Só os Loucos Sabem</option><option>Lugar ao Sol</option><option>Tudo Que Ela Gosta de Escutar</option><option>Lutar pelo Que é Meu</option><option>Vicios e virtudes</option><option>Ela vai voltar</option></optgroup>
+        <optgroup label="Coldplay"><option>Yellow</option></optgroup>
+        <optgroup label="Cranberries"><option>Zombie</option><option>Linger</option></optgroup>
+        <optgroup label="Creedence Clearwater Revival"><option>I Put a Spell on You</option><option>Suzie Q</option><option>Bad Moon Rising</option><option>Have You Ever Seen the Rain?</option><option>Proud Mary</option></optgroup>
+        <optgroup label="Detonautas"><option>Você me faz tão bem</option><option>O dia que não terminou</option><option>Olhos Certos</option><option>Quando o sol se for</option><option>Outro lugar</option></optgroup>
+        <optgroup label="Elis Regina"><option>Como Nossos Pais</option><option>Velha Roupa Colorida</option></optgroup>
+        <optgroup label="Erasmo Carlos"><option>Ilegal, Imoral ou Engorda</option></optgroup>
+        <optgroup label="Frejat"><option>Amor Pra Recomeçar</option><option>Segredos</option><option>Por Você</option></optgroup>
+        <optgroup label="Green Day"><option>Holiday</option><option>Boulevard of Broken Dreams</option><option>Basket Case</option><option>Time of Your Life</option><option>Wake Me Up When September Ends</option></optgroup>
+        <optgroup label="Janis Joplin"><option>Me and Bobby McGee</option></optgroup>
+        <optgroup label="John Denver"><option>Take Me Home</option></optgroup>
+        <optgroup label="John Mayer"><option>Gravity</option></optgroup>
+        <optgroup label="Jota Quest"><option>Do Seu Lado</option><option>Além do Horizonte</option></optgroup>
+        <optgroup label="Kid Abelha"><option>Como Eu Quero</option></optgroup>
+        <optgroup label="Legião Urbana"><option>Pais e Filhos</option><option>Será</option><option>Geração Coca-Cola</option><option>Ainda É Cedo</option><option>Tempo Perdido</option><option>Indios</option><option>Mais uma vez</option></optgroup>
+        <optgroup label="Los Hermanos"><option>Ana Júlia</option></optgroup>
+        <optgroup label="Lulu Santos"><option>Assim Caminha a Humanidade</option><option>Tempos Modernos</option><option>Apenas Mais Uma de Amor</option></optgroup>
+        <optgroup label="Lynyrd Skynyrd"><option>Simple Man</option></optgroup>
+        <optgroup label="Mamonas Assassinas"><option>Vira vira</option><option>Pelados em santos</option><option>Mundo animal</option><option>Shopis centis</option><option>Sábado de sol</option><option>Não peide aqui baby</option><option>O mamute</option></optgroup>
+        <optgroup label="Marilyn Manson"><option>Coma White</option><option>Sweet Dreams</option></optgroup>
+        <optgroup label="Maskavo"><option>Asas</option><option>Anjo</option></optgroup>
+        <optgroup label="Matanza"><option>Bom é quando faz mal</option></optgroup>
+        <optgroup label="Nando Reis"><option>Pra Você Guardei o Amor</option><option>De Janeiro a Janeiro</option><option>Marvin</option><option>Por Onde Andei</option><option>Cegos do Castelo</option></optgroup>
+        <optgroup label="Natiruts"><option>Liberdade Pra Dentro da Cabeça</option><option>Tudo Vai Dar Certo</option><option>Quero Ser Feliz Também</option><option>Andei Só</option></optgroup>
+        <optgroup label="Nenhum de Nós"><option>Astronauta de Mármore</option></optgroup>
+        <optgroup label="Nirvana"><option>Heart-Shaped Box</option><option>Lake of Fire</option><option>About a Girl</option><option>Polly</option></optgroup>
+        <optgroup label="O Rappa"><option>Anjos</option><option>Pescador de Ilusões</option></optgroup>
+        <optgroup label="Oasis"><option>Wonderwall</option></optgroup>
+        <optgroup label="Papas da Língua"><option>Eu Sei</option></optgroup>
+        <optgroup label="Paralamas do Sucesso"><option>Meu Erro</option><option>Ela Disse Adeus</option><option>Aonde Quer Que Eu Vá</option></optgroup>
+        <optgroup label="Pearl Jam"><option>Soldier of Love</option><option>Last Kiss</option><option>Sirens</option></optgroup>
+        <optgroup label="Pink Floyd"><option>Wish You Were Here</option><option>Another Brick in the Wall</option></optgroup>
+        <optgroup label="Pitty"><option>Equalize</option><option>Máscara</option><option>Déjà Vu</option><option>Memórias</option><option>Me Adora</option><option>Na sua estante</option></optgroup>
+        <optgroup label="Plebe Rude"><option>Até Quando Esperar</option></optgroup>
+        <optgroup label="R.E.M."><option>Losing My Religion</option></optgroup>
+        <optgroup label="Raimundos"><option>A Mais Pedida</option><option>Mulher de Fases</option><option>I Saw You Saying</option><option>Aquela</option><option>Me Lambe</option></optgroup>
+        <optgroup label="Ramones"><option>I Wanna Be Sedated</option><option>Pet Sematary</option><option>Poison Heart</option><option>Blitzkrieg Bop</option></optgroup>
+        <optgroup label="Raul Seixas"><option>Meu Amigo Pedro</option><option>Cantar</option><option>Disco Voador</option><option>Cowboy Fora da Lei</option><option>Metamorfose Ambulante</option><option>Aluga-se</option><option>Tu És o MDC da Minha Vida</option><option>Tente Outra Vez</option><option>Eu Sou Egoísta</option><option>Gita</option><option>Coisas do coração</option><option>As minas do rei salomao</option><option>Anos 80</option><option>Quando acabar o maluco sou eu</option><option>Fazendo o que o diabo gosta</option><option>Rock das aranhas</option><option>Rockxice</option><option>Medo da chuva</option><option>Al capone</option><option>Sos</option><option>Eu nasci há 10 anos atrás</option><option>Capim Guiné</option><option>Por quem os sinos dobram</option><option>Carpinteiro do universo</option><option>Pastor joao e a igreja invisível</option><option>Nao quero mais andar na contramao</option><option>Geração da luz</option></optgroup>
+        <optgroup label="Red Hot Chili Peppers"><option>Californication</option><option>Snow (Hey Oh!)</option><option>Under the Bridge</option><option>Otherside</option></optgroup>
+        <optgroup label="Rita Lee"><option>Tudo Vira Bosta</option><option>Esse Tal de Roque Enrow</option><option>Jardins da Babilônia</option><option>Ovelha Negra</option><option>Agora Só Falta Você</option></optgroup>
+        <optgroup label="Skank"><option>Vou Deixar</option><option>Sutilmente</option><option>Acima do Sol</option><option>Dois Rios</option><option>Resposta</option><option>Vamos fugir</option><option>Ainda gosto dela</option><option>Saidera</option><option>Te ver</option><option>É uma partida de futebol</option></optgroup>
+        <optgroup label="System of a Down"><option>Aerials</option><option>Lost in Hollywood</option><option>Roulette</option><option>Lonely Day</option></optgroup>
+        <optgroup label="Talking Heads"><option>Psycho Killer</option></optgroup>
+        <optgroup label="The Beatles"><option>Hey Jude</option><option>A Hard Day's Night</option><option>Twist and Shout</option></optgroup>
+        <optgroup label="The Doors"><option>Riders on the Storm</option><option>Love Me Two Times</option></optgroup>
+        <optgroup label="The Police"><option>Every Breath You Take</option></optgroup>
+        <optgroup label="The Smashing Pumpkins"><option>Disarm</option></optgroup>
+        <optgroup label="Tim Maia"><option>Ela Partiu</option><option>Você</option><option>Gostava Tanto de Você</option><option>Azul da Cor do Mar</option><option>Acenda o Farol</option></optgroup>
+        <optgroup label="Titãs"><option>Epitáfio</option><option>Pra Dizer Adeus</option><option>Bichos Escrotos</option><option>Flores</option><option>Isso</option><option>Por que eu sei que é amor</option><option>Sonífera ilha</option><option>Polícia</option><option>É preciso saber viver</option></optgroup>
+        <optgroup label="Tribalistas"><option>Velha Infância</option></optgroup>
+        <optgroup label="Ultraje a Rigor"><option>Ciúme</option><option>Nada a declarar</option></optgroup>
+        <optgroup label="Vanessa Rangel"><option>Palpite</option></optgroup>
+        <optgroup label="Velhas Virgens"><option>Uns drinks</option></optgroup>
+        <optgroup label="Ventania"><option>O diabo é careta</option><option>Maconha</option><option>Só para loucos</option><option>Cogumelos azuis</option></optgroup>
+        <optgroup label="Weezer"><option>Island in the sun</option></optgroup>
+        <optgroup label="Ziggy Marley"><option>True to Myself</option></optgroup>
+      </select>
+
+      <label for="mensagem">Mensagem (opcional)</label>
+      <textarea id="mensagem" placeholder="Quer mandar um recado junto?"></textarea>
+
+      <button type="submit">Enviar pedido pro WhatsApp</button>
+      <small>O WhatsApp abrirá com a mensagem pronta. É só confirmar o envio.</small>
+    </form>
+
+    <div class="footer">
+      Rock Vibzz • Live
+    </div>
+  </div>
+
+  <script>
+    const whatsappNumber = "5541996338156"; 
+
+    function sendToWhatsApp() {
+      const nome = document.getElementById("nome").value.trim();
+      const musica = document.getElementById("musica").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
+
+      if (!musica) {
+        alert("Escolha uma música antes de enviar.");
+        return false;
+      }
+
+      let texto = `🎶 Pedido de Música — Rock Vibzz\nMúsica: ${musica}\n`;
+      if (nome) texto += `Nome: ${nome}\n`;
+      if (mensagem) texto += `Recado: ${mensagem}\n`;
+      texto += `\nEnviado pelo site do nosso acervo!`;
+
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(texto)}`;
+      window.open(url, "_blank");
+
+      return false;
+    }
+  </script>
 </body>
 </html>
